@@ -69,7 +69,7 @@ const AddArtistForm = ({artists, addArtist, costs, addCost}) => {
             <div className={classes.cost}>
             <input className={classes.input} type='number' placeholder='00.00' value={artist.cost} onChange={updateArtistCost}></input>
             </div>
-            <button className={classes.button} onClick={artist.name != '' && artist.cost != '' ? onSubmit : toggleError}>send it</button>
+            <button className={classes.button} onClick={artist.name !== '' && artist.cost !== '' ? onSubmit : toggleError}>send it</button>
             {error === true ? <p>please enter artist name and cost.</p> : null}
         </div>
     )
