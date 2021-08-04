@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import React, {useState, useEffect} from 'react'
 import {createUseStyles} from 'react-jss'
@@ -39,7 +39,6 @@ const App = () => {
   const [revenue, setRevenue] = useState(0)
   const [costs, addCost] = useState([])
   const [sumCosts, calcCosts] = useState(0)
-  const [sumRevenue, calcRevenue] = useState(0)
 
   useEffect(() => {
       if (costs.length > 1) {
