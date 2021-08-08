@@ -5,6 +5,7 @@ import {createUseStyles} from 'react-jss'
 const useStyles = createUseStyles({
     input: {
         marginRight: '10px',
+        marginLeft: '10px',
         width: '50%',
         border: 'solid 1px rgb(0,0,0)',
         borderRadius: '3px',

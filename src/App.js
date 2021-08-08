@@ -14,7 +14,7 @@ import BudgetOverview from './Components/BudgetOverview'
 */
 const useStyles = createUseStyles({
     
-  background: {
+  /*background: {
       position: 'fixed',
       top: '0',
       left: '0',
@@ -26,13 +26,14 @@ const useStyles = createUseStyles({
       filter: 'blur(5px)',
       '-webkit-filter': 'blur(5px)'
   },
-
+*/
   globalStyles: {
-      marginTop: '15px',
+      width: '100vw',
+      height: '100vh',
       padding: '0',
       fontFamily: '"Roboto Mono", monospace',
-      marginLeft: '10px'
-      
+      backgroundImage: `linear-gradient(to bottom, rgba(255, 250, 250, 0.82), rgba(154, 201, 252, 0.53)), url("dj-img.jpg")`,
+      backgroundSize: 'cover'
   }
 })
 
