@@ -1,5 +1,4 @@
 
-import './App.css';
 import React, {useState, useEffect} from 'react'
 import {createUseStyles} from 'react-jss'
 
@@ -7,6 +6,12 @@ import TicketRevenue from './Components/TicketRevenue'
 import RoomOverview from './Components/RoomOverview'
 import BudgetOverview from './Components/BudgetOverview'
 
+
+/* TO DO
+1. trouble shoot background image in mobile browser by moving background
+    to global styles instead of its own div
+2. set up tests
+*/
 const useStyles = createUseStyles({
     
   background: {
@@ -23,7 +28,6 @@ const useStyles = createUseStyles({
   },
 
   globalStyles: {
-      
       marginTop: '15px',
       padding: '0',
       fontFamily: '"Roboto Mono", monospace',
