@@ -3,11 +3,13 @@ import React, {useState, useEffect} from 'react'
 import {createUseStyles} from 'react-jss'
 
 import Header from './Components/Header'
-import TicketRevenue from './Components/TicketRevenue'
-import RoomOverview from './Components/RoomOverview'
+import Venue from './Components/Venue'
+import Artists from './Components/Artists'
+import Tickets from './Components/Tickets'
 import BudgetOverview from './Components/BudgetOverview'
 import SignUpForm from './Components/SignUpForm'
 import SignInForm from './Components/SignInForm'
+import Info from './Components/Info'
 
 
 /* TO DO
@@ -37,6 +39,10 @@ const useStyles = createUseStyles({
       fontFamily: '"Roboto Mono", monospace',
       backgroundImage: `linear-gradient(to bottom, rgba(255, 250, 250, 0.82), rgba(154, 201, 252, 0.53)), url("dj-img.jpg")`,
       backgroundSize: 'cover'
+  },
+  body: {
+      marginLeft: '5vw',
+      marginTop: '5vh'
   }
 })
 
@@ -49,6 +55,7 @@ const App = () => {
   const [revenue, setRevenue] = useState(0)
   const [costs, addCost] = useState([])
   const [sumCosts, calcCosts] = useState(0)
+  const [capacity, setCapacity] = useState(300)
 
   useEffect(() => {
       if (costs.length > 1) {
@@ -70,32 +77,28 @@ const App = () => {
           <div className={classes.background} />
           <Header setModalDisplay={setModalDisplay} user={user ? true : false} setUser={setUser} />
           <SignUpForm display={displayModal === 'sign-up' ? true : false} setDisplay={setModalDisplay} setUser={setUser}/>
-          <SignInForm display={displayModal === 'log-in' ? true : false} setDisplay={setModalDisplay} setUser={setUser} />   
-          <div>
+          <SignInForm display={displayModal === 'log-in' ? true : false} setDisplay={setModalDisplay} setUser={setUser} />
+          <Info display={displayModal === 'info' ? true : false} setDisplay={setModalDisplay} />   
+          <div className={classes.body}>
             <BudgetOverview   
                 currencyFormatter={currencyFormatter}
                 revenue={revenue}
                 costs={sumCosts}
-            /> 
-            <RoomOverview 
-                room='1'
-                capacity='350'
+            />
+            <Venue 
+                setCapacity={setCapacity}
+                costs={costs}
+                addCost={addCost}
+            />
+            <Artists
                 currencyFormatter={currencyFormatter}
                 costs={costs}
                 addCost={addCost}
             />
-            <RoomOverview
-                room='2'
-                capacity='150'
+            <Tickets 
                 currencyFormatter={currencyFormatter}
-                costs={costs}
-                addCost={addCost}
-            />
-            
-            <TicketRevenue 
-                currencyFormatter={currencyFormatter}
-                allRevenue={revenue}
                 setRevenue={setRevenue}
+                capacity={capacity}
             />
         </div>
       </div>
