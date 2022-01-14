@@ -2,6 +2,7 @@ import React from 'react'
 import {createUseStyles} from 'react-jss'
 import { getAuth } from 'firebase/auth'
 
+
 const useStyles = createUseStyles({
     
     header: {
@@ -49,9 +50,11 @@ const Header = ({ setModalDisplay, user, setUser }) => {
     const onClick = (e) => {
         e.preventDefault()
         if (e.target.innerHTML === 'i\'m new here') {
-            setModalDisplay('sign-up')
+            setModalDisplay('info')
         } else if (e.target.innerHTML === 'log in') {
             setModalDisplay('log-in')
+        } else if (e.target.innerHTML === 'sign up') {
+            setModalDisplay('sign-in')
         } else {
             const auth = getAuth()
             auth.signOut().then(() => {
@@ -68,6 +71,7 @@ const Header = ({ setModalDisplay, user, setUser }) => {
             </div>
             <div className={classes.navText}>
                 <h3 className={classes.h3} onClick={onClick}>i'm new here</h3>
+                <h3 className={classes.h3} onClick={onClick}>{user ? null : 'sign up'}</h3>
                 <h3 className={classes.h3} onClick={onClick}>{user ? 'log out' : 'log in'}</h3>
             </div>
             
