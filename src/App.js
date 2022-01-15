@@ -42,7 +42,6 @@ const useStyles = createUseStyles({
       backgroundAttachment: 'fixed',
       overflow: 'scroll',
       overflowX: 'hidden',
-      overflowY: 'hidden'
   },
   body: {
       marginLeft: '5vw',
