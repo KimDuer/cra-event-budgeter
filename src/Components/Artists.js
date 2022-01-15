@@ -56,14 +56,17 @@ const useStyles = createUseStyles({
     },
     input: {
         height: '30px',
-        width: '80%',
+        width: '90%',
         borderBottom: 'solid 1px rgb(0,0,0)',
         //borderRadius: '3px',
-        marginLeft: '10px',
+        marginLeft: '2px',
         backgroundColor: 'rgb(64,64,64)',
         color: 'rgb(255,255,255)',
         fontFamily: 'inherit',
-        fontSize: '18px'
+        fontSize: '18px',
+        '@media (max-width: 400px)': {
+            fontSize: '14px'
+        }
     },
     buttons: {
         display: 'inline-flex',
@@ -76,8 +79,12 @@ const useStyles = createUseStyles({
         height: '40px',
         fontFamily: 'inherit',
         fontSize: '20px',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        '@media (max-width: 400px)': {
+            fontSize: '14px'
+        }
     },
+    
     moduleButton: {
         background: 'linear-gradient(to bottom, rgba(100, 250, 250, .7), rgba(154, 201, 252, .7))',
         //borderRight: 'solid 1px rgb(53,53,53)',

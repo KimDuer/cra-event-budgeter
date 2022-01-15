@@ -51,7 +51,7 @@ const useStyles = createUseStyles({
         height: '20px',
         marginRight: '10px',
         marginLeft: '10px',
-        width: '100px',
+        width: '75px',
         border: 'solid 1px rgb(0,0,0)',
         borderRadius: '3px',
         backgroundColor: 'rgb(64,64,64)',
@@ -100,7 +100,7 @@ const Tickets = ({ capacity, currencyFormatter, setRevenue }) => {
             module.style.height = '60px'
             setToggle(!toggle)
         } else {
-            module.style.height = '183px'
+            module.style.height = '223px'
             setToggle(!toggle)
         }
     }
@@ -117,13 +117,10 @@ const Tickets = ({ capacity, currencyFormatter, setRevenue }) => {
             </div>
             <div className={classes.content}>
                 <div className={classes.row}>
-                    
-                        <p className={classes.p}>{ticketsSold} tickets sold at {currencyFormatter.format(ticketPrice)}</p>
-                    
-                    
-                        <h4 className={classes.revenue}>{`: ${currencyFormatter.format(ticketRevenue)}`}</h4>
-                    
-                    
+                    <h4 className={classes.revenue}>{`${currencyFormatter.format(ticketRevenue)}`}</h4>
+                </div>
+                <div className={classes.row}>
+                    <p className={classes.p}>{ticketsSold} tickets sold at {currencyFormatter.format(ticketPrice)}</p>
                 </div>
                 <div className={classes.row}>
                     <input className={classes.range} type='range' min='50' max={capacity} defaultValue='50' id='ticketsSold' onChange={(e) => updateCount(parseInt(e.target.value))}></input>

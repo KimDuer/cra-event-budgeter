@@ -102,7 +102,7 @@ const Venue = ({ setCapacity, costs, addCost }) => {
                 </div>
                 <div className={classes.row}>
                     <h4>Capacity:</h4>
-                    <input className={classes.input} id='input-venue-capacity' placeholder='350' type='number'></input>
+                    <input className={classes.input} id='input-venue-capacity' placeholder='300' type='number'></input>
                 </div>
                 <button className={classes.moduleButton} onClick={onSubmit}>submit</button>
             </div>
