@@ -116,7 +116,7 @@ const Header = ({ setModalDisplay, user, setUser }) => {
                     <h4 className={classes.title}>Prophitable</h4>
                     <h3 className={classes.subtext}>live event manager</h3>
                 </div>
-                <div className={classes.menuToggle} id='menu-toggle' onClick={animateMenu}>
+                <div className={classes.menuToggle} id='menu-toggle' onClick={animateMenu} alt='menu'>
                             <img src='/menu-icon.png' className={classes.menuIcon} id='menu-icon'/>
                 </div>
             </div>
